@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Exam - Page 1</title>
+
+  <meta charset="UTF-8">
+   <meta name="description" content="Italy food Italian pasta desert ">
+    <meta name="keywords" content="italy,resturant,italiano,pasta,drinks,pizza">
+     <meta name="author" content="Rana Al Hamad">
+      <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  <link rel="icon" href="img/fav.png">
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+
+  <script type="text/javascript" src="jquery.js"></script>
+
+
+
+
+
+</head>
+<body onload="return CheckTime()">
+
+
+  <nav class="navbar navbar-expand-lg ">
+  <a class="navbar-brand ml-5" href="#"><i class="fab fa-leanpub"></i> Learn </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="login.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="about.html">About</a>
+      </li> 
+    </ul>
+  </div>
+</nav>
+
+<div id="quiz-time-left"> </div>
+
+<form id="quiz-wrap" name="form_exam" onsubmit="return Result()">
+
+    <div class="question" id="question_1">
+        <h1>1) Please don't forget to ring me when you _______ home.</h1>
+        <label>
+            <input type="radio" value="0" required="" class="oquiz" name="quiz-1"> will get</label>
+        <label>
+            <input type="radio" value="1" required="" class="oquiz" name="quiz-1"> get</label>
+        <label>
+            <input type="radio" value="2" required="" class="oquiz" name="quiz-1"> are going to get</label>
+        <label>
+            <input type="radio" value="3" required="" class="oquiz" name="quiz-1"> are getting</label>
+    </div>
+    <div class="question" id="question_2">
+        <h1>2) Did you have any problems _______ our house?</h1>
+        <label>
+            <input type="radio" value="0" required="" class="oquiz" name="quiz-2"> find</label>
+        <label>
+            <input type="radio" value="1" required="" class="oquiz" name="quiz-2"> to find</label>
+        <label>
+            <input type="radio" value="2" required="" class="oquiz" name="quiz-2"> finding</label>
+        <label>
+            <input type="radio" value="3" required="" class="oquiz" name="quiz-2"> for finding</label>
+    </div>
+    <div class="question" id="question_3">
+        <h1>3) Soldiers have been sent in to try to restore _______ in the area.</h1>
+        <label>
+            <input type="radio" value="0" required="" class="oquiz" name="quiz-3"> harmony</label>
+        <label>
+            <input type="radio" value="1" required="" class="oquiz" name="quiz-3"> order</label>
+        <label>
+            <input type="radio" value="2" required="" class="oquiz" name="quiz-3"> regulation</label>
+        <label>
+    </div>
+    <div class="question" id="question_4">
+        <h1>4) The police are _______ an investigation into the robbery.</h1>
+        <label>
+            <input type="radio" value="0" required="" class="oquiz" name="quiz-4"> working out</label>
+        <label>
+            <input type="radio" value="1" required="" class="oquiz" name="quiz-4"> searching out</label>
+        <label>
+            <input type="radio" value="2" required="" class="oquiz" name="quiz-4"> making out</label>
+        <label>
+            <input type="radio" value="3" required="" class="oquiz" name="quiz-4"> carrying out</label>
+    </div>
+    <div class="question" id="question_5">
+        <h1>5) When Sam was a small child, he _______ spend hours every day playing with stones in the garden.</h1>
+        <label>
+            <input type="radio" value="0" required="" class="oquiz" name="quiz-5"> would</label>
+        <label>
+            <input type="radio" value="1" required="" class="oquiz" name="quiz-5"> was</label>
+        <label>
+            <input type="radio" value="2" required="" class="oquiz" name="quiz-5"> should</label>
+        <label>
+            <input type="radio" value="3" required="" class="oquiz" name="quiz-5"> used</label>
+    </div>
+
+   <input class="btn  btn-lg" type="submit" value="Next Page">
+</form>
+
+
+
+
+<script type="text/javascript">
+
+    function Result()
+    {
+
+      var form = document.form_exam;
+      var quiz_1 = form.elements["quiz-1"].value;
+      localStorage.setItem("quiz_1_Answer", quiz_1);
+	    var quiz_2 = form.elements["quiz-2"].value;
+      localStorage.setItem("quiz_2_Answer", quiz_2);
+	    var quiz_3 = form.elements["quiz-3"].value;
+       localStorage.setItem("quiz_3_Answer", quiz_3);
+	    var quiz_4 = form.elements["quiz-4"].value;
+      localStorage.setItem("quiz_4_Answer", quiz_4);
+	    var quiz_5 = form.elements["quiz-5"].value;
+      localStorage.setItem("quiz_5_Answer", quiz_5);
+
+
+     
+      window.location.href="online-exam-2.html";
+      return false;
+    }
+
+//Timer 2.5 Min
+var total_seconds = 60 * 2.5;
+var c_minutes = parseInt(total_seconds / 60);
+var c_seconds = parseInt(total_seconds % 60);
+var timer;
+
+function CheckTime () {
+
+  document.getElementById("quiz-time-left").innerHTML = 'Time Left: ' + c_minutes + ' minutes ' + c_seconds + ' seconds ';
+
+  if (total_seconds <= 0) {
+    Result();
+  } else {
+    total_seconds = total_seconds - 1;
+    c_minutes = parseInt(total_seconds / 60);
+    c_seconds = parseInt(total_seconds % 60);
+    timer = setTimeout(CheckTime, 1000);
+  }
+
+  return false;
+}
+
+timer = setTimeout(CheckTime, 1000);
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>

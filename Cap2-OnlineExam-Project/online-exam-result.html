@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Exam - Result</title>
+
+  <meta charset="UTF-8">
+   <meta name="description" content="Italy food Italian pasta desert ">
+    <meta name="keywords" content="italy,resturant,italiano,pasta,drinks,pizza">
+     <meta name="author" content="Rana Al Hamad">
+      <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  <link rel="icon" href="img/fav.png">
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+
+  <script type="text/javascript" src="jquery.js"></script>
+
+
+
+</head>
+<body onload="return ShowResult()">
+
+
+  <nav class="navbar navbar-expand-lg ">
+  <a class="navbar-brand ml-5" href="#"><i class="fab fa-leanpub"></i> Learn</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="login.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="about.html">About</a>
+      </li> 
+    </ul>
+  </div>
+</nav>
+     
+
+<h1 class="result"> Final Results </h1>
+
+<p  id ="result" ></p>
+
+
+
+
+  
+<script type="text/javascript">
+
+function ShowResult()
+    {
+      var Final_Result=localStorage.getItem("Result");
+
+      var resutTxt="";
+      if(parseInt(Final_Result) < 5  )
+      {
+       
+        resutTxt ="Unfortunately you are <strong style=\"color:red\">Failed</strong>";
+         // alert(resutTxt);
+      }
+      else {
+
+  resutTxt ="Congratulations you are <strong style=\"color:green\">Passed !</strong>";
+        // alert(resutTxt);
+      }
+      document.getElementById('result').innerHTML="Your Score Is : " +Final_Result+"/10"
+      +"<br>"+" ( "+resutTxt +" ) ";
+      // document.getElementById('resultTxt').innerHTML=" ( "+resutTxt +" ) ";
+
+
+      return false;
+    }
+
+  </script>
+
+</body>
+</html>

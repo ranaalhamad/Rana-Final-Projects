@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Exam - Page 2</title>
+
+  <meta charset="UTF-8">
+   <meta name="description" content="Italy food Italian pasta desert ">
+    <meta name="keywords" content="italy,resturant,italiano,pasta,drinks,pizza">
+     <meta name="author" content="Rana Al Hamad">
+      <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  <link rel="icon" href="img/fav.png">
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+
+  <script type="text/javascript" src="jquery.js"></script>
+
+
+
+
+
+</head>
+<body>
+
+
+  <nav class="navbar navbar-expand-lg ">
+  <a class="navbar-brand ml-5" href="#"><i class="fab fa-leanpub"></i> Learn</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="Login.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="about.html">About</a>
+      </li> 
+    </ul>
+  </div>
+</nav>
+
+<div id="quiz-time-left"> </div>
+     
+
+<form id="quiz-wrap" name="form_exam" onsubmit="return Result()">
+
+    <div class="question" id="question_6">
+        <h1>6) How _______ have you and your family lived in this flat?</h1>
+        <label>
+            <input type="radio" value="0" required="" class="oquiz" name="quiz-6"> much</label>
+        <label>                                                                
+            <input type="radio" value="1" required="" class="oquiz" name="quiz-6"> soon</label>
+        <label>                                                                
+            <input type="radio" value="2" required="" class="oquiz" name="quiz-6"> often</label>
+        <label>                                                                
+            <input type="radio" value="3" required="" class="oquiz" name="quiz-6"> long</label>
+    </div>
+    <div class="question" id="question_7">
+        <h1>7) Jenny likes her job but she hates the long _______ to work every day.</h1>
+        <label>
+            <input type="radio" value="0" required="" class="oquiz" name="quiz-7"> journey</label>
+        <label>                                                                
+            <input type="radio" value="1" required="" class="oquiz" name="quiz-7"> distance</label>
+        <label>                                                                
+            <input type="radio" value="2" required="" class="oquiz" name="quiz-7"> voyage</label>
+        <label>                                                                
+            <input type="radio" value="3" required="" class="oquiz" name="quiz-7"> travel</label>
+    </div>
+    <div class="question" id="question_8">
+        <h1>8) We may have a picnic tomorrow but it will depend _______ the weather.</h1>
+        <label>
+            <input type="radio" value="0" required="" class="oquiz" name="quiz-8"> of</label>
+        <label>                                                                
+            <input type="radio" value="1" required="" class="oquiz" name="quiz-8"> in</label>
+        <label>                                                                
+            <input type="radio" value="2" required="" class="oquiz" name="quiz-8"> on</label>
+        <label>                                                                
+            <input type="radio" value="3" required="" class="oquiz" name="quiz-8"> off</label>
+    </div>
+    <div class="question" id="question_9">
+        <h1>9) Nina went to the same school _______ I did.</h1>
+        <label>
+            <input type="radio" value="0" required="" class="oquiz" name="quiz-9"> like</label>
+        <label>                                                                
+            <input type="radio" value="1" required="" class="oquiz" name="quiz-9"> as</label>
+        <label>                                                               
+            <input type="radio" value="2" required="" class="oquiz" name="quiz-9"> than</label>
+        <label>                                                                
+            <input type="radio" value="3" required="" class="oquiz" name="quiz-9"> so</label>
+    </div>
+    <div class="question" id="question_10">
+        <h1>10) Have you been back to the house _______ you grew up?</h1>
+        <label>
+            <input type="radio" value="0" required="" class="oquiz" name="quiz-10"> who</label>
+        <label>                                                                
+            <input type="radio" value="1" required="" class="oquiz" name="quiz-10"> when</label>
+        <label>                                                                
+            <input type="radio" value="2" required="" class="oquiz" name="quiz-10"> which</label>
+        <label>                                                                
+            <input type="radio" value="3" required="" class="oquiz" name="quiz-10"> where</label>
+    </div>
+
+   <input class="btn  btn-lg" type="submit" value="Show Result">
+</form>
+
+
+
+<script type="text/javascript">
+
+    function Result()
+    {
+
+      var form = document.form_exam;
+      var quiz_6 = form.elements["quiz-6"].value;
+      localStorage.setItem("quiz_6_Answer", quiz_6);
+	  var quiz_7 = form.elements["quiz-7"].value;
+      localStorage.setItem("quiz_7_Answer", quiz_7);
+	  var quiz_8 = form.elements["quiz-8"].value;
+      localStorage.setItem("quiz_8_Answer", quiz_8);
+	  var quiz_9 = form.elements["quiz-9"].value;
+      localStorage.setItem("quiz_9_Answer", quiz_9);
+	  var quiz_10 = form.elements["quiz-10"].value;
+      localStorage.setItem("quiz_10_Answer", quiz_10);
+
+ 
+      var countResut=0;
+
+      if(localStorage.getItem("quiz_1_Answer") == 1)
+      {
+        countResut++;
+      }
+      
+      if(localStorage.getItem("quiz_2_Answer") == 2)
+      {
+        countResut++;
+      }
+      
+      if(localStorage.getItem("quiz_3_Answer") == 0)
+      {
+        countResut++;
+      }
+      
+      if(localStorage.getItem("quiz_4_Answer") == 3)
+      {
+        countResut++;
+      }
+      
+      if(localStorage.getItem("quiz_5_Answer") == 0)
+      {
+        countResut++;
+      }
+
+      if(localStorage.getItem("quiz_6_Answer") == 3)
+      {
+        countResut++;
+      }
+      
+      if(localStorage.getItem("quiz_7_Answer") == 0)
+      {
+        countResut++;
+      }
+      
+      if(localStorage.getItem("quiz_8_Answer") == 2)
+      {
+        countResut++;
+      }
+      
+      if(localStorage.getItem("quiz_9_Answer") == 1)
+      {
+        countResut++;
+      }
+      
+      if(localStorage.getItem("quiz_10_Answer") == 1)
+      {
+        countResut++;
+      }
+
+
+
+     //Total Resut
+    localStorage.setItem("Result", countResut);
+
+    //alert("Your Score is  : " + countResut + " OF  10");
+
+    window.location.href="online-exam-result.html";
+    return false;
+
+
+
+
+      
+    }
+
+
+//Timer 2.5 Min
+var total_seconds = 60 * 2.5;
+var c_minutes = parseInt(total_seconds / 60);
+var c_seconds = parseInt(total_seconds % 60);
+var timer;
+
+function CheckTime () {
+
+  document.getElementById("quiz-time-left").innerHTML = 'Time Left: ' + c_minutes + ' minutes ' + c_seconds + ' seconds ';
+
+  if (total_seconds <= 0) {
+    Result();
+  } else {
+    total_seconds = total_seconds - 1;
+    c_minutes = parseInt(total_seconds / 60);
+    c_seconds = parseInt(total_seconds % 60);
+    timer = setTimeout(CheckTime, 1000);
+  }
+
+  return false;
+}
+
+timer = setTimeout(CheckTime, 1000);
+
+  </script>
+
+</body>
+</html>

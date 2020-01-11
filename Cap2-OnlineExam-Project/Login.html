@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online Exam - Login Page</title>
+
+  <meta charset="UTF-8">
+  <meta name="description" content="Student Online Exam">
+  <meta name="keywords" content="Online Exam,exam, Quiz">
+  <meta name="author" content="Rana Al Hamad">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+  <link rel="icon" href="img/fav.png">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+  <script type="text/javascript" src="jquery.js"></script>
+
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg ">
+  <a class="navbar-brand ml-5" href="#"><i class="fab fa-leanpub"></i> Learn </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="about.html">About</a>
+      </li> 
+    </ul>
+  </div>
+</nav>
+     
+
+
+<div class="jumbotron">
+
+ <h3><b>English Placement Test<b></h3>
+
+<form name="form_login" onsubmit="return Start()">
+
+  <p id="validation"></p>
+
+ <br>
+  <input type="text" name="Username" placeholder=" User Name" required>
+  <br><br>
+  <input type="password" name="Password" placeholder=" Password" required>
+  <br><br>
+  <input class="btn btn-md" type="submit" value="Login ">
+ </form>  
+
+ 
+</div>   
+
+<footer class="foot">
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-3 mt-2 pt-1">
+        <h5 >ADRESS</h5>
+        <p class="mt-2 pt-2"> Jordan - Amman</p>
+
+   </div>
+<div class="col-3 mt-2 pt-1">
+  <h5>MORE INFO</h5>
+  <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook  mt-2 icon"></i></a>
+  <a href="https://www.instagram.com/" target="_blank" alt="facebook.com"><i class="fab fa-instagram icon"></i></a>
+  <a href="https://twitter.com/?lang=ar" target="_blank"><i class="fab fa-twitter-square p-1 icon"></i></a>
+  
+</div>
+<div class="col-3 mt-2 pt-1">
+  <h5>CONTACT US</h5>
+  <p class="mt-2 pt-2">0788260960</p>
+</div>
+<div class="col-3 mt-2 pt-1">
+  <h5>WEBSITE</h5>
+  <p class="mt-2 pt-2">Learn@info.com</p>
+</div>
+</div>
+
+</footer>
+
+
+
+<script type="text/javascript">
+
+		function Start()
+		{
+			var form = document.form_login;
+			var Username = form.elements["Username"].value;
+			var Password = form.elements["Password"].value;
+			
+			if(Username.toLowerCase() == "learn" && Password.toLowerCase() == "123")
+			{
+				localStorage.setItem("_username", Username.toLowerCase());
+			var _username = localStorage.getItem("username");
+			    localStorage.setItem("_password", Password.toLowerCase());
+			var _password = localStorage.getItem("password");
+				window.location.href="about.html";
+				return false;
+			}
+
+	  else{
+
+	       document.getElementById('validation').innerHTML="You are not authorized to access!";
+				 document.getElementById('validation').style.color="red"; 
+				 // alert("You are not authorized to access!");
+		
+				return false;
+			}
+
+		}
+
+	</script>
+
+
+
+
+
+</body>
+</html>
